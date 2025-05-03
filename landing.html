@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tailwind Landing</title>
+    <style>
+        .mobile-menu {
+            display: none;
+            opacity: 0; /* Initially hide the menu and set opacity to 0 */
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Add transitions for opacity and transform */
+            transform: translateY(-20px); /* Start slightly above its final position */
+        }
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1; /* Fade in the menu */
+            transform: translateY(0); /* Slide into its final position */
+        }
+    </style>
+</head>
+<body class="container mx-auto bg-gray-100 p-5">
+    <!-- nav start-->
+    <nav class="flex items-center justify-between ">
+        <div class="flex items-center gap-2">
+            <img src="assets/asset 0.png" alt="logo">
+            <h1 class="text-2xl">ToDesktop</h1>
+        </div>
+        
+        <ul class="lg:flex gap-10 text-lg justify-between items-center hidden ">
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Login</a></li>
+            
+        </ul> 	
+        <button class="border hidden lg:flex gap-2 items-center text-black px-4 py-2 rounded-md">
+            <img src="assets/asset 1.svg" alt=""/>
+            <p class="text-xl" >Electron Developers</p>
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        
+        <button id="menubtn"  class="lg:hidden">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button> 
+        
+        <div class="mobile-menu z-10 hidden lg:hidden bg-white fixed inset-0 flex flex-col" id="mobileMenu">
+            <div class="flex items-center px-5 mt-5 justify-between gap-2">
+                <div class="flex items-center gap-2">
+                    <img src="assets/asset 0.png" alt="logo">
+                    <h1 class="text-2xl">ToDesktop</h1> 
+                </div>
+                <button id="closeMenuBtn">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col gap-5 text-lg justify-between p-4">
+                <a href="#" class="hover:bg-green-500">Pricing</a>
+                <a href="#" class="hover:bg-gray-500">Docs</a>
+                <a href="#" class="hover:bg-gray-500">Changelog</a>
+                <a href="#" class="hover:bg-gray-500">Blogs</a>
+                <a href="#" class="hover:bg-gray-500">Login</a> 	
+                <div class="h-[1px] bg-gray-500"></div> 
+                <button class="border flex gap-2 items-center justify-center text-black px-4 py-2 rounded-md">
+                    <img src="assets/asset 1.svg" alt=""/>
+                    <p class="text-xl" >Electron Developers</p>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button> 			
+            </div>
+        </div>
+        
+    </nav>
+   <!-- nav end -->  
+    <!-- hero start -->
+    <div class="min-h-screen bg-gradient-to-b from-purple-50 via-orange-50 to-transparent ">
+      
+        <div class="flex flex-col sm:max-w-4xl mx-auto sm:justify-center sm:items-center mt-20 ">
+            <div class="flex shadow-md hover:shadow-xl hover:-translate-y-1 transition group w-fit rounded-xl items-center gap-2 border-2 px-3 py-1 border-yellow-200">
+                <div class="bg-yellow-500 w-2 h-2 rounded-full border border-yello-900"></div>
+                <p class="text-yellow-500">V0.21.1:<span class="text-[#854D0E] text-xl text-bold"> Find-in page bug fixes</span></p>
+                <i class="fa-solid fa-arrow-right text-yellow-500 text-xl group-hover:translate-x-1 transition "></i>
+            </div>
+            
+            <div class="hidden sm:flex mt-10 gap-4 text-gray-500">
+                <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-code"></i>
+                    <p>Code Optional</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-hand"></i>
+                    <p>Drag & drop builder</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-laptop"></i>
+                    <p>Windows, Mac, Linux</p>
+                </div>
+
+            </div>
+
+          <div class="flex flex-col sm:text-center sm:items-center mt-10">
+            <h1 class="my-10 text-semibold text-5xl  sm:text-7xl leading"> Web app to desktop app in minutes</h1>
+            <p class="text-[20px]">Take your web app codebase and transform it into a cross platform desktop app with native functionality</p>
+             
+            <div class="flex flex-col sm:flex-row gap-5 mt-10">
+
+                <button class="bg-[#464AF1] sm:px-4 text-xl text-white text-bold py-2 rounded-sm border">
+                    Download now
+                </button>
+                <button class="text-black sm:px-7 text-bold py-2 rounded-sm border">
+                    Read Docs
+                </button>
+            </div>
+          </div>
+        </div>
+    </div>
+   
+
+   <div class="flex  flex-col gap-10">
+
+    <h1 class="text-5xl  text-bold text-gray-900 mb-5">How it works</h1>
+    <div class="flex px-12 rounded-xl py-8  justify-between items-center flex-col gap-4 sm:flex-row  border border-gray-200">
+        
+        <div class="flex flex-col gap-4 lg:w-1/2">
+            <span class="bg-yellow-50 px-4 py-1 rounded text-bold text-yellow-800 border border-yellow-300 w-fit ">Step 1</span>
+            <h1 class="py-5 text-5xl text-gray-900 leading-15 text-bold">Bootstrap straight from your web app</h1>  
+            <p1 class="text-gray-900">
+                Copy and paste your web app url into ToDesktop. Customise your app design, app icon and window frame UI with no code.
+            </p1>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="flex  items-center gap-2">
+                    <i class="fa-solid fa-check text-xl text-gray-900"></i>
+                    <p class="underline text-xl text-gray-900">Multiple Windows</p>
+                </div>
+                <div class="flex  items-center gap-2">
+                    <i class="fa-solid fa-check text-xl text-gray-900"></i>
+                    <p class="underline text-xl text-gray-900">Multiple Windows</p>
+                </div>
+                <div class="flex  items-center gap-2">
+                    <i class="fa-solid fa-check text-xl text-gray-900"></i>
+                    <p class="underline text-xl text-gray-900">Multiple Windows</p>
+                </div>
+                <div class="flex  items-center gap-2">
+                    <i class="fa-solid fa-check text-xl text-gray-900"></i>
+                    <p class="underline text-xl text-gray-900">Multiple Windows</p>
+                </div>
+                <div class="flex  items-center gap-2">
+                    <i class="fa-solid fa-check text-xl text-gray-900"></i>
+                    <p class="underline text-xl text-gray-900">Multiple Windows</p>
+                </div>
+                <div class="flex  items-center gap-2">
+                    <i class="fa-solid fa-check text-xl text-gray-900"></i>
+                    <p class="underline text-xl text-gray-900">Multiple Windows</p>
+                </div>
+            
+            
+
+            </div>
+
+        </div>
+    
+        <img  src="assets/asset 66.svg" alt="process"/>
+      
+
+    </div>
+
+   </div>
+
+      
+  
+
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
