@@ -1,74 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Scroll Animation (Line 4 Functionality)</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-
-    <div class="h-[500px] flex items-center justify-center font-bold text-2xl bg-gray-100 mb-5">Scroll Down</div>
-
-    <div class="border rounded-xl border-gray-600 p-4">
-        <div id="line4" class="whitespace-nowrap overflow-hidden flex items-center justify-center gap-10 ">
-            <h1 class=" text-2xl font-bold ">Data Analytics</h1>
-            <span class="text-2xl font-bold">•</span>
-            <h1 class="text-2xl font-bold ">Data Analytics</h1>
-            <span class="text-2xl font-bold">•</span>
-            <h1 class="text-2xl font-bold ">Data Analytics</h1>
-            <span class="text-2xl font-bold">•</span>
-            <h1 class="text-2xl font-bold ">Data Analytics</h1>
-            <span class="text-2xl font-bold">•</span>
-            <h1 class="text-2xl font-bold ">Data Analytics</h1>
-            <span class="text-2xl font-bold">•</span>
-            <h1 class="text-2xl font-bold ">Data Analytics</h1>
-            <span class="text-2xl font-bold">•</span>
-            <h1 class="text-2xl font-bold ">Data Analytics</h1>
-            <span class="text-2xl font-bold">•</span>
-        </div>
+<div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">Is ToDesktop For Me?</button>
+      <div class="faq-answer">
+        <p>That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+      </div>
     </div>
+ 
+  </div>
+  
 
-    <div class="h-[500px] flex items-center justify-center font-bold text-2xl bg-gray-100 mt-5">More Scrolling</div>
-
-    <script>
-        const initialTranslateLTR = -48 * 4;
-        const initialTranslateRTL = 36 * 4;
-
-        function setupIntersectionObserver(element, isLTR, speed) {
-            const intersectionCallback = (entries) => {
-                const isIntersecting = entries[0].isIntersecting;
-                if (isIntersecting) {
-                    document.addEventListener('scroll', scrollHandler);
-                } else {
-                    document.removeEventListener('scroll', scrollHandler);
-                }
-            };
-            const intersectionObserver = new IntersectionObserver(intersectionCallback);
-
-            intersectionObserver.observe(element);
-
-            function scrollHandler() {
-                const translateY = window.innerHeight - element.getBoundingClientRect().top;
-                const translateX = translateY * speed;
-
-                let totalTranslate = 0;
-                if (isLTR) {
-                    totalTranslate = translateX + initialTranslateLTR;
-                } else {
-                    totalTranslate = -(translateX + initialTranslateRTL);
-                }
-
-                element.style.transform = `translateX(${totalTranslate}px)`;
-            }
-        }
-
-        const line4Element = document.getElementById('line4'); // Target the div with id="line4"
-
-        if (line4Element) {
-            setupIntersectionObserver(line4Element, true, 0.8); // Apply fast left-to-right functionality
-        }
-    </script>
-
-</body>
-</html>

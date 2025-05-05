@@ -470,6 +470,71 @@
   </div>
 
 
+   <!-- FAQ -->
+   <h1 class="text-5xl font-bold text-gray-800 ">FAQs</h1>
+   <div class="grid lg:grid-cols-2 gap-6">
+   
+    <div class="flex flex-col gap-2 p-5 ">
+      <div class="faq-header flex items-center justify-between gap-6 border border-gray-200 px-2 py-4 rounded-lg cursor-pointer">
+        <h1 class="font-bold">Is ToDesktop For Me?</h1>
+        <i class="arrow-icon fa-solid fa-arrow-down"></i>
+      </div>
+      <p class="answer text-xl px-2 hidden">That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+    </div>
+    <div class="flex flex-col gap-2 p-5 ">
+      <div class="faq-header flex items-center justify-between gap-6 border border-gray-200 px-2 py-4 rounded-lg cursor-pointer">
+        <h1 class="font-bold">Is ToDesktop For Me?</h1>
+        <i class="arrow-icon fa-solid fa-arrow-down"></i>
+      </div>
+      <p class="answer text-xl px-2 hidden">That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+    </div>
+    <div class="flex flex-col gap-2 p-5 ">
+      <div class="faq-header flex items-center justify-between gap-6 border border-gray-200 px-2 py-4 rounded-lg cursor-pointer">
+        <h1 class="font-bold">Is ToDesktop For Me?</h1>
+        <i class="arrow-icon fa-solid fa-arrow-down"></i>
+      </div>
+      <p class="answer text-xl px-2 hidden">That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+    </div>
+    <div class="flex flex-col gap-2 p-5 ">
+      <div class="faq-header flex items-center justify-between gap-6 border border-gray-200 px-2 py-4 rounded-lg cursor-pointer">
+        <h1 class="font-bold">Is ToDesktop For Me?</h1>
+        <i class="arrow-icon fa-solid fa-arrow-down"></i>
+      </div>
+      <p class="answer text-xl px-2 hidden">That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+    </div>
+    <div class="flex flex-col gap-2 p-5 ">
+      <div class="faq-header flex items-center justify-between gap-6 border border-gray-200 px-2 py-4 rounded-lg cursor-pointer">
+        <h1 class="font-bold">Is ToDesktop For Me?</h1>
+        <i class="arrow-icon fa-solid fa-arrow-down"></i>
+      </div>
+      <p class="answer text-xl px-2 hidden">That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+    </div>
+    <div class="flex flex-col gap-2 p-5 ">
+      <div class="faq-header flex items-center justify-between gap-6 border border-gray-200 px-2 py-4 rounded-lg cursor-pointer">
+        <h1 class="font-bold">Is ToDesktop For Me?</h1>
+        <i class="arrow-icon fa-solid fa-arrow-down"></i>
+      </div>
+      <p class="answer text-xl px-2 hidden">That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+    </div>
+  </div>
+
+
+   <!-- footer -->
+   <div class="flex m-10 p-10 flex-col lg:flex-row-reverse gap-10 items-center justify-between p-4 bg-gray-100">
+    <span class="text-xl text-gray-600">Documentation</span>
+     <div class="flex gap-6 text-gray-600">
+        <i class="fa-brands fa-github text-4xl"></i>
+        <i class="fa-brands fa-twitter text-4xl"></i>
+     </div>
+   
+    <div class="flex gap-2 items-center lg:flex-1">
+      <img src="assets/asset 0.png" alt="ToDesktop Logo" class="">
+      <h1 class="font-bold">To DeskTop</h1>
+    </div>
+    
+
+  </div>
+
 
  </div>
 
@@ -515,6 +580,24 @@
         if (line4Element) {
             setupIntersectionObserver(line4Element, true, 0.8); // Apply fast left-to-right functionality
         }
+
+
+        const faqHeaders = document.querySelectorAll('.faq-header');
+
+        faqHeaders.forEach(faqHeader => {
+        const answer = faqHeader.nextElementSibling;
+        const arrowIcon = faqHeader.querySelector('.arrow-icon');
+
+        faqHeader.addEventListener('click', () => {
+            if (answer.classList.contains('hidden')) {
+            answer.classList.remove('hidden');
+            arrowIcon.style.transform = 'rotate(180deg)';
+            } else {
+            answer.classList.add('hidden');
+            arrowIcon.style.transform = 'rotate(0deg)';
+            }
+        });
+        });
     </script>
 
 
